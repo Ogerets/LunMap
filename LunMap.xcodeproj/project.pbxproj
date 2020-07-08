@@ -19,7 +19,17 @@
 		972191C124B5C92B00EC4B2B /* buildings.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 972191C024B5C92B00EC4B2B /* buildings.geojson */; };
 		972191C324B5C9DB00EC4B2B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972191C224B5C9DB00EC4B2B /* Defaults.swift */; };
 		97897C5924B5D27B00D4DC09 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C5824B5D27B00D4DC09 /* Cities.swift */; };
-		97897C5B24B6334700D4DC09 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C5A24B6334700D4DC09 /* Building.swift */; };
+		97897C5B24B6334700D4DC09 /* BuildingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C5A24B6334700D4DC09 /* BuildingInfo.swift */; };
+		97897C6824B66FA300D4DC09 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6024B66FA300D4DC09 /* BottomPopupViewController.swift */; };
+		97897C6924B66FA300D4DC09 /* BottomPopupDismissInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6124B66FA300D4DC09 /* BottomPopupDismissInteractionController.swift */; };
+		97897C6A24B66FA300D4DC09 /* BottomPopupPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6224B66FA300D4DC09 /* BottomPopupPresentAnimator.swift */; };
+		97897C6B24B66FA300D4DC09 /* BottomPopupNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6324B66FA300D4DC09 /* BottomPopupNavigationController.swift */; };
+		97897C6C24B66FA300D4DC09 /* BottomPopupUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6424B66FA300D4DC09 /* BottomPopupUtils.swift */; };
+		97897C6D24B66FA300D4DC09 /* BottomPopupTransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6524B66FA300D4DC09 /* BottomPopupTransitionHandler.swift */; };
+		97897C6E24B66FA300D4DC09 /* BottomPopupDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6624B66FA300D4DC09 /* BottomPopupDismissAnimator.swift */; };
+		97897C6F24B66FA300D4DC09 /* BottomPopupPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6724B66FA300D4DC09 /* BottomPopupPresentationController.swift */; };
+		97897C7124B6700C00D4DC09 /* BuildingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C7024B6700C00D4DC09 /* BuildingInfoViewController.swift */; };
+		97897C7324B6708100D4DC09 /* BuildingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97897C7224B6708100D4DC09 /* BuildingInfo.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,7 +60,17 @@
 		972191C024B5C92B00EC4B2B /* buildings.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buildings.geojson; sourceTree = "<group>"; };
 		972191C224B5C9DB00EC4B2B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		97897C5824B5D27B00D4DC09 /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
-		97897C5A24B6334700D4DC09 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		97897C5A24B6334700D4DC09 /* BuildingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfo.swift; sourceTree = "<group>"; };
+		97897C6024B66FA300D4DC09 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
+		97897C6124B66FA300D4DC09 /* BottomPopupDismissInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupDismissInteractionController.swift; sourceTree = "<group>"; };
+		97897C6224B66FA300D4DC09 /* BottomPopupPresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupPresentAnimator.swift; sourceTree = "<group>"; };
+		97897C6324B66FA300D4DC09 /* BottomPopupNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupNavigationController.swift; sourceTree = "<group>"; };
+		97897C6424B66FA300D4DC09 /* BottomPopupUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupUtils.swift; sourceTree = "<group>"; };
+		97897C6524B66FA300D4DC09 /* BottomPopupTransitionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupTransitionHandler.swift; sourceTree = "<group>"; };
+		97897C6624B66FA300D4DC09 /* BottomPopupDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupDismissAnimator.swift; sourceTree = "<group>"; };
+		97897C6724B66FA300D4DC09 /* BottomPopupPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupPresentationController.swift; sourceTree = "<group>"; };
+		97897C7024B6700C00D4DC09 /* BuildingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoViewController.swift; sourceTree = "<group>"; };
+		97897C7224B6708100D4DC09 /* BuildingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuildingInfo.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +119,7 @@
 				97897C5724B5D26C00D4DC09 /* Models */,
 				972191B624B5C5DF00EC4B2B /* Controllers */,
 				972191B524B5C5D500EC4B2B /* Views */,
+				97897C5C24B66F6100D4DC09 /* Utils */,
 				9721919F24B5C3FB00EC4B2B /* AppDelegate.swift */,
 				972191C224B5C9DB00EC4B2B /* Defaults.swift */,
 			);
@@ -110,6 +131,7 @@
 			children = (
 				972191AA24B5C3FD00EC4B2B /* LaunchScreen.storyboard */,
 				972191A524B5C3FB00EC4B2B /* Map.storyboard */,
+				97897C7224B6708100D4DC09 /* BuildingInfo.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				972191A324B5C3FB00EC4B2B /* MapViewController.swift */,
+				97897C7024B6700C00D4DC09 /* BuildingInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -144,9 +167,32 @@
 			isa = PBXGroup;
 			children = (
 				97897C5824B5D27B00D4DC09 /* Cities.swift */,
-				97897C5A24B6334700D4DC09 /* Building.swift */,
+				97897C5A24B6334700D4DC09 /* BuildingInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		97897C5C24B66F6100D4DC09 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				97897C5F24B66F9000D4DC09 /* BottomPopup */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		97897C5F24B66F9000D4DC09 /* BottomPopup */ = {
+			isa = PBXGroup;
+			children = (
+				97897C6324B66FA300D4DC09 /* BottomPopupNavigationController.swift */,
+				97897C6024B66FA300D4DC09 /* BottomPopupViewController.swift */,
+				97897C6124B66FA300D4DC09 /* BottomPopupDismissInteractionController.swift */,
+				97897C6624B66FA300D4DC09 /* BottomPopupDismissAnimator.swift */,
+				97897C6424B66FA300D4DC09 /* BottomPopupUtils.swift */,
+				97897C6224B66FA300D4DC09 /* BottomPopupPresentAnimator.swift */,
+				97897C6524B66FA300D4DC09 /* BottomPopupTransitionHandler.swift */,
+				97897C6724B66FA300D4DC09 /* BottomPopupPresentationController.swift */,
+			);
+			path = BottomPopup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +257,7 @@
 				972191AC24B5C3FD00EC4B2B /* LaunchScreen.storyboard in Resources */,
 				972191C124B5C92B00EC4B2B /* buildings.geojson in Resources */,
 				972191A924B5C3FD00EC4B2B /* Assets.xcassets in Resources */,
+				97897C7324B6708100D4DC09 /* BuildingInfo.storyboard in Resources */,
 				972191A724B5C3FB00EC4B2B /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,11 +269,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97897C6A24B66FA300D4DC09 /* BottomPopupPresentAnimator.swift in Sources */,
 				97897C5924B5D27B00D4DC09 /* Cities.swift in Sources */,
+				97897C6F24B66FA300D4DC09 /* BottomPopupPresentationController.swift in Sources */,
 				972191A424B5C3FB00EC4B2B /* MapViewController.swift in Sources */,
-				97897C5B24B6334700D4DC09 /* Building.swift in Sources */,
+				97897C6824B66FA300D4DC09 /* BottomPopupViewController.swift in Sources */,
+				97897C6B24B66FA300D4DC09 /* BottomPopupNavigationController.swift in Sources */,
+				97897C6D24B66FA300D4DC09 /* BottomPopupTransitionHandler.swift in Sources */,
+				97897C5B24B6334700D4DC09 /* BuildingInfo.swift in Sources */,
 				972191A024B5C3FB00EC4B2B /* AppDelegate.swift in Sources */,
+				97897C6C24B66FA300D4DC09 /* BottomPopupUtils.swift in Sources */,
 				972191C324B5C9DB00EC4B2B /* Defaults.swift in Sources */,
+				97897C6E24B66FA300D4DC09 /* BottomPopupDismissAnimator.swift in Sources */,
+				97897C7124B6700C00D4DC09 /* BuildingInfoViewController.swift in Sources */,
+				97897C6924B66FA300D4DC09 /* BottomPopupDismissInteractionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

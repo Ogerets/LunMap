@@ -78,19 +78,19 @@ class MapViewController: UIViewController {
         // FIXME
         let buildingInfo = try! BuildingInfo(title: title, address: address, imageUrl: imageUrlString)
 
-        self.showAnnotation(at: feature.coordinate, buildingInfo: buildingInfo)
+        self.mapView.setCenter(feature.coordinate, zoomLevel: Defaults.viewInfoZoomLevel, animated: true)
+
+        self.showBuidingInfo(buildingInfo)
     }
 
-    private func showAnnotation(at coordinates: CLLocationCoordinate2D, buildingInfo: BuildingInfo) {
-        let annotation = MGLPointAnnotation()
-        annotation.coordinate = coordinates
-        annotation.title = buildingInfo.title
-        annotation.subtitle = buildingInfo.address
+    private func showBuidingInfo(_ info: BuildingInfo) {
+        let buildingInfoView = UIStoryboard(name: "BuildingInfo", bundle: Bundle.main)
+        let buildingInfoVC = buildingInfoView.instantiateInitialViewController()! as! BuildingInfoViewController
+        _ = buildingInfoVC.view
 
-        self.mapView.addAnnotation(annotation)
+        buildingInfoVC.setupWith(buildingInfo: info)
 
-        self.mapView.setCenter(annotation.coordinate, zoomLevel: Defaults.viewInfoZoomLevel, animated: true)
-        self.mapView.selectAnnotation(annotation, moveIntoView: true, animateSelection: true, completionHandler: nil)
+        self.present(buildingInfoVC, animated: true, completion: nil)
     }
 }
 
@@ -110,9 +110,10 @@ extension MapViewController: MGLMapViewDelegate {
         style.addSource(source)
 
         let layer = MGLCircleStyleLayer(identifier: "buildings", source: source)
+
         layer.sourceLayerIdentifier = "HPC_landmarks-b60kqn"
-        layer.circleColor = NSExpression(forConstantValue: #colorLiteral(red: 0.67, green: 0.28, blue: 0.13, alpha: 1))
-        layer.circleOpacity = NSExpression(forConstantValue: 0.8)
+        layer.circleColor = NSExpression(forConstantValue: #colorLiteral(red: 0.9984138608, green: 0.5949610472, blue: 0.002865632763, alpha: 1))
+        layer.circleOpacity = NSExpression(forConstantValue: 1.0)
 
         let zoomStops = [10: 2,
                          15: 10]
