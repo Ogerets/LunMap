@@ -11,7 +11,8 @@ import CoreLocation
 
 enum Defaults {
     static var city: Cities = .Kyiv
-    static var zoomLevel: Double = 9.0
+    static var startZoomLevel: Double = 9.0
+    static var viewInfoZoomLevel: Double = 14.0
     static var maxZoomLevel: Double = 15.4
     static var minZoomLevel: Double = 8.5
 }
