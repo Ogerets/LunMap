@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  LunMap
 //
 //  Created by Yevhen Pyvovarov on 7/8/20.
@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Mapbox
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
+    @IBOutlet weak var mapView: MGLMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+    }
 }
 

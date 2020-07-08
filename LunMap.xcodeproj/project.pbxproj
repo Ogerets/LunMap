@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		972191A024B5C3FB00EC4B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721919F24B5C3FB00EC4B2B /* AppDelegate.swift */; };
-		972191A424B5C3FB00EC4B2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972191A324B5C3FB00EC4B2B /* ViewController.swift */; };
-		972191A724B5C3FB00EC4B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972191A524B5C3FB00EC4B2B /* Main.storyboard */; };
+		972191A424B5C3FB00EC4B2B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972191A324B5C3FB00EC4B2B /* MapViewController.swift */; };
+		972191A724B5C3FB00EC4B2B /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972191A524B5C3FB00EC4B2B /* Map.storyboard */; };
 		972191A924B5C3FD00EC4B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 972191A824B5C3FD00EC4B2B /* Assets.xcassets */; };
 		972191AC24B5C3FD00EC4B2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972191AA24B5C3FD00EC4B2B /* LaunchScreen.storyboard */; };
 		972191BA24B5C69500EC4B2B /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972191B824B5C69500EC4B2B /* Mapbox.framework */; };
@@ -17,6 +17,8 @@
 		972191BC24B5C69500EC4B2B /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */; };
 		972191BD24B5C69500EC4B2B /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		972191C124B5C92B00EC4B2B /* buildings.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 972191C024B5C92B00EC4B2B /* buildings.geojson */; };
+		972191C324B5C9DB00EC4B2B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972191C224B5C9DB00EC4B2B /* Defaults.swift */; };
+		97897C5924B5D27B00D4DC09 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C5824B5D27B00D4DC09 /* Cities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,14 +39,16 @@
 /* Begin PBXFileReference section */
 		9721919C24B5C3FB00EC4B2B /* LunMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9721919F24B5C3FB00EC4B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		972191A324B5C3FB00EC4B2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		972191A624B5C3FB00EC4B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		972191A324B5C3FB00EC4B2B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		972191A624B5C3FB00EC4B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		972191A824B5C3FD00EC4B2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		972191AB24B5C3FD00EC4B2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		972191AD24B5C3FD00EC4B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		972191B824B5C69500EC4B2B /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 		972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = Carthage/Build/iOS/MapboxMobileEvents.framework; sourceTree = "<group>"; };
 		972191C024B5C92B00EC4B2B /* buildings.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buildings.geojson; sourceTree = "<group>"; };
+		972191C224B5C9DB00EC4B2B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		97897C5824B5D27B00D4DC09 /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +94,11 @@
 		972191B324B5C5A900EC4B2B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				97897C5724B5D26C00D4DC09 /* Models */,
 				972191B624B5C5DF00EC4B2B /* Controllers */,
 				972191B524B5C5D500EC4B2B /* Views */,
 				9721919F24B5C3FB00EC4B2B /* AppDelegate.swift */,
+				972191C224B5C9DB00EC4B2B /* Defaults.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -101,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				972191AA24B5C3FD00EC4B2B /* LaunchScreen.storyboard */,
-				972191A524B5C3FB00EC4B2B /* Main.storyboard */,
+				972191A524B5C3FB00EC4B2B /* Map.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,7 +115,7 @@
 		972191B624B5C5DF00EC4B2B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				972191A324B5C3FB00EC4B2B /* ViewController.swift */,
+				972191A324B5C3FB00EC4B2B /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +136,14 @@
 				972191C024B5C92B00EC4B2B /* buildings.geojson */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		97897C5724B5D26C00D4DC09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97897C5824B5D27B00D4DC09 /* Cities.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +208,7 @@
 				972191AC24B5C3FD00EC4B2B /* LaunchScreen.storyboard in Resources */,
 				972191C124B5C92B00EC4B2B /* buildings.geojson in Resources */,
 				972191A924B5C3FD00EC4B2B /* Assets.xcassets in Resources */,
-				972191A724B5C3FB00EC4B2B /* Main.storyboard in Resources */,
+				972191A724B5C3FB00EC4B2B /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,20 +219,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				972191A424B5C3FB00EC4B2B /* ViewController.swift in Sources */,
+				97897C5924B5D27B00D4DC09 /* Cities.swift in Sources */,
+				972191A424B5C3FB00EC4B2B /* MapViewController.swift in Sources */,
 				972191A024B5C3FB00EC4B2B /* AppDelegate.swift in Sources */,
+				972191C324B5C9DB00EC4B2B /* Defaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		972191A524B5C3FB00EC4B2B /* Main.storyboard */ = {
+		972191A524B5C3FB00EC4B2B /* Map.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				972191A624B5C3FB00EC4B2B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Map.storyboard;
 			sourceTree = "<group>";
 		};
 		972191AA24B5C3FD00EC4B2B /* LaunchScreen.storyboard */ = {
