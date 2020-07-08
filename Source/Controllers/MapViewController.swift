@@ -15,6 +15,20 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupMapView()
+    }
+
+    private func setupMapView() {
+        self.mapView.delegate = self
+        self.mapView.latitude = Defaults.city.coordinates().latitude
+        self.mapView.longitude = Defaults.city.coordinates().longitude
+        self.mapView.zoomLevel = Defaults.zoomLevel
+    }
+}
+
+extension MapViewController: MGLMapViewDelegate {
+    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+        // TODO
     }
 }
 
