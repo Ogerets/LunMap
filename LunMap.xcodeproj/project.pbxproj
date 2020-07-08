@@ -16,6 +16,7 @@
 		972191BB24B5C69500EC4B2B /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 972191B824B5C69500EC4B2B /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		972191BC24B5C69500EC4B2B /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */; };
 		972191BD24B5C69500EC4B2B /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		972191C124B5C92B00EC4B2B /* buildings.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 972191C024B5C92B00EC4B2B /* buildings.geojson */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		972191AD24B5C3FD00EC4B2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		972191B824B5C69500EC4B2B /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 		972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = Carthage/Build/iOS/MapboxMobileEvents.framework; sourceTree = "<group>"; };
+		972191C024B5C92B00EC4B2B /* buildings.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buildings.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				9721919E24B5C3FB00EC4B2B /* LunMap */,
 				972191B324B5C5A900EC4B2B /* Source */,
+				972191BF24B5C8F500EC4B2B /* Resources */,
 				9721919D24B5C3FB00EC4B2B /* Products */,
 				972191B724B5C69500EC4B2B /* Frameworks */,
 			);
@@ -79,7 +82,6 @@
 		9721919E24B5C3FB00EC4B2B /* LunMap */ = {
 			isa = PBXGroup;
 			children = (
-				972191A824B5C3FD00EC4B2B /* Assets.xcassets */,
 				972191AD24B5C3FD00EC4B2B /* Info.plist */,
 			);
 			path = LunMap;
@@ -119,6 +121,15 @@
 				972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		972191BF24B5C8F500EC4B2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				972191A824B5C3FD00EC4B2B /* Assets.xcassets */,
+				972191C024B5C92B00EC4B2B /* buildings.geojson */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				972191AC24B5C3FD00EC4B2B /* LaunchScreen.storyboard in Resources */,
+				972191C124B5C92B00EC4B2B /* buildings.geojson in Resources */,
 				972191A924B5C3FD00EC4B2B /* Assets.xcassets in Resources */,
 				972191A724B5C3FB00EC4B2B /* Main.storyboard in Resources */,
 			);
