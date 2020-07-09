@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97004C2124B7282700C13C50 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97004C2024B7282700C13C50 /* Log.swift */; };
 		972191A024B5C3FB00EC4B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721919F24B5C3FB00EC4B2B /* AppDelegate.swift */; };
 		972191A424B5C3FB00EC4B2B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972191A324B5C3FB00EC4B2B /* MapViewController.swift */; };
 		972191A724B5C3FB00EC4B2B /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972191A524B5C3FB00EC4B2B /* Map.storyboard */; };
@@ -18,6 +19,9 @@
 		972191BD24B5C69500EC4B2B /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		972191C124B5C92B00EC4B2B /* buildings.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 972191C024B5C92B00EC4B2B /* buildings.geojson */; };
 		972191C324B5C9DB00EC4B2B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972191C224B5C9DB00EC4B2B /* Defaults.swift */; };
+		97496D5324B70FE600EA38A4 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97496D5224B70FE600EA38A4 /* MapPresenter.swift */; };
+		97496D5624B7120700EA38A4 /* MGLMapView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97496D5524B7120700EA38A4 /* MGLMapView+Configure.swift */; };
+		97496D5D24B71F0500EA38A4 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97496D5C24B71F0500EA38A4 /* Feature.swift */; };
 		97897C5924B5D27B00D4DC09 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C5824B5D27B00D4DC09 /* Cities.swift */; };
 		97897C5B24B6334700D4DC09 /* BuildingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C5A24B6334700D4DC09 /* BuildingInfo.swift */; };
 		97897C6824B66FA300D4DC09 /* BottomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97897C6024B66FA300D4DC09 /* BottomPopupViewController.swift */; };
@@ -48,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		97004C2024B7282700C13C50 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		9721919C24B5C3FB00EC4B2B /* LunMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9721919F24B5C3FB00EC4B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		972191A324B5C3FB00EC4B2B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +64,9 @@
 		972191B924B5C69500EC4B2B /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = Carthage/Build/iOS/MapboxMobileEvents.framework; sourceTree = "<group>"; };
 		972191C024B5C92B00EC4B2B /* buildings.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = buildings.geojson; sourceTree = "<group>"; };
 		972191C224B5C9DB00EC4B2B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		97496D5224B70FE600EA38A4 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		97496D5524B7120700EA38A4 /* MGLMapView+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MGLMapView+Configure.swift"; sourceTree = "<group>"; };
+		97496D5C24B71F0500EA38A4 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		97897C5824B5D27B00D4DC09 /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		97897C5A24B6334700D4DC09 /* BuildingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfo.swift; sourceTree = "<group>"; };
 		97897C6024B66FA300D4DC09 /* BottomPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupViewController.swift; sourceTree = "<group>"; };
@@ -117,8 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				97897C5724B5D26C00D4DC09 /* Models */,
-				972191B624B5C5DF00EC4B2B /* Controllers */,
 				972191B524B5C5D500EC4B2B /* Views */,
+				972191B624B5C5DF00EC4B2B /* Controllers */,
+				97496D5124B70FD800EA38A4 /* Presenters */,
 				97897C5C24B66F6100D4DC09 /* Utils */,
 				9721919F24B5C3FB00EC4B2B /* AppDelegate.swift */,
 				972191C224B5C9DB00EC4B2B /* Defaults.swift */,
@@ -163,11 +172,28 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		97496D5124B70FD800EA38A4 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				97496D5224B70FE600EA38A4 /* MapPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		97496D5424B711EB00EA38A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97496D5524B7120700EA38A4 /* MGLMapView+Configure.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		97897C5724B5D26C00D4DC09 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				97897C5824B5D27B00D4DC09 /* Cities.swift */,
 				97897C5A24B6334700D4DC09 /* BuildingInfo.swift */,
+				97496D5C24B71F0500EA38A4 /* Feature.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,7 +201,9 @@
 		97897C5C24B66F6100D4DC09 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				97496D5424B711EB00EA38A4 /* Extensions */,
 				97897C5F24B66F9000D4DC09 /* BottomPopup */,
+				97004C2024B7282700C13C50 /* Log.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -271,8 +299,12 @@
 			files = (
 				97897C6A24B66FA300D4DC09 /* BottomPopupPresentAnimator.swift in Sources */,
 				97897C5924B5D27B00D4DC09 /* Cities.swift in Sources */,
+				97004C2124B7282700C13C50 /* Log.swift in Sources */,
+				97496D5324B70FE600EA38A4 /* MapPresenter.swift in Sources */,
 				97897C6F24B66FA300D4DC09 /* BottomPopupPresentationController.swift in Sources */,
+				97496D5624B7120700EA38A4 /* MGLMapView+Configure.swift in Sources */,
 				972191A424B5C3FB00EC4B2B /* MapViewController.swift in Sources */,
+				97496D5D24B71F0500EA38A4 /* Feature.swift in Sources */,
 				97897C6824B66FA300D4DC09 /* BottomPopupViewController.swift in Sources */,
 				97897C6B24B66FA300D4DC09 /* BottomPopupNavigationController.swift in Sources */,
 				97897C6D24B66FA300D4DC09 /* BottomPopupTransitionHandler.swift in Sources */,

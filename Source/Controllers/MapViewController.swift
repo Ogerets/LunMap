@@ -12,6 +12,8 @@ import Mapbox
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MGLMapView!
 
+    private lazy var presenter = MapPresenter(controller: self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,63 +31,19 @@ class MapViewController: UIViewController {
         self.mapView.maximumZoomLevel = Defaults.maxZoomLevel
         self.mapView.minimumZoomLevel = Defaults.minZoomLevel
 
-        // Add a single tap gesture recognizer. This gesture requires the built-in
-        // MGLMapView tap gestures (such as those for zoom and annotation selection)
-        // to fail (this order differs from the double tap above).
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(self.handleMapTap(sender:)))
-        for recognizer in self.mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
-            singleTap.require(toFail: recognizer)
-        }
-        self.mapView.addGestureRecognizer(singleTap)
+        self.mapView.addModalGestureRecognizer(singleTap)
     }
 
     @objc private func handleMapTap(sender: UITapGestureRecognizer) {
-        guard sender.state == .ended else {
-            return
-        }
+        let point = sender.location(in: sender.view)
 
-        let pointTapped = sender.location(in: sender.view)
-
-        if let annotations = self.mapView.annotations {
-            self.mapView.removeAnnotations(annotations)
-        }
-
-        // FIXME
-        let width: CGFloat = 10.0
-
-        let rect = CGRect(x: pointTapped.x - width / 2,
-                          y: pointTapped.y - width / 2,
-                          width: width,
-                          height: width)
-
-        let features = self.mapView.visibleFeatures(in: rect, styleLayerIdentifiers: ["buildings"])
-
-        // Pick the first feature (which may be a port or a cluster), ideally selecting
-        // the one nearest nearest one to the touch point.
-        guard let feature = features.first else {
-            return
-        }
-
-        // FIXME
-        guard
-            let title = feature.attributes["name"] as? String,
-            let address = feature.attributes["address"] as? String,
-            let imageUrlString = feature.attributes["image_url"] as? String
-        else {
-            return
-        }
-
-        // FIXME
-        let buildingInfo = try! BuildingInfo(title: title, address: address, imageUrl: imageUrlString)
-
-        self.mapView.setCenter(feature.coordinate, zoomLevel: Defaults.viewInfoZoomLevel, animated: true)
-
-        self.showBuidingInfo(buildingInfo)
-
-        self.addAnnotation(at: feature.coordinate)
+        self.presenter.mapTapped(at: point)
     }
+}
 
-    private func showBuidingInfo(_ info: BuildingInfo) {
+extension MapViewController: MapViewControllerProtocol {
+    func showBuildingInfo(_ info: BuildingInfo) {
         let buildingInfoView = UIStoryboard(name: "BuildingInfo", bundle: Bundle.main)
         let buildingInfoVC = buildingInfoView.instantiateInitialViewController()! as! BuildingInfoViewController
         _ = buildingInfoVC.view
@@ -96,7 +54,18 @@ class MapViewController: UIViewController {
         self.present(buildingInfoVC, animated: true, completion: nil)
     }
 
-    private func addAnnotation(at coordinates: CLLocationCoordinate2D) {
+    func setCamera(to coordinate: CLLocationCoordinate2D) {
+        self.mapView.setCenter(coordinate, zoomLevel: Defaults.viewInfoZoomLevel, animated: true)
+    }
+
+    func getBuildingFeatures(in rect: CGRect) -> [Feature] {
+        // TODO: Make enum with layers ids
+        let mglFeatures = self.mapView.visibleFeatures(in: rect, styleLayerIdentifiers: ["buildings"])
+
+        return mglFeatures.map { Feature(coordinates: $0.coordinate, attributes: $0.attributes) }
+    }
+
+    func addAnnotation(at coordinates: CLLocationCoordinate2D) {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = coordinates
 
@@ -113,7 +82,7 @@ extension MapViewController: MGLMapViewDelegate {
 
         let layer = MGLCircleStyleLayer(identifier: "buildings", source: source)
 
-        layer.sourceLayerIdentifier = "HPC_landmarks-b60kqn"
+        layer.sourceLayerIdentifier = "buildings"
         layer.circleColor = NSExpression(forConstantValue: #colorLiteral(red: 0.9984138608, green: 0.5949610472, blue: 0.002865632763, alpha: 1))
         layer.circleOpacity = NSExpression(forConstantValue: 1.0)
 

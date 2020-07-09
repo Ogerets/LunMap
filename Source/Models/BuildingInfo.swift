@@ -13,9 +13,21 @@ class BuildingInfo {
     let address: String
     let imageUrl: String
 
-    init(title: String, address: String, imageUrl: String) throws {
+    public enum Error: Swift.Error {
+        case parsingFeatureFailed
+    }
+
+    init(feature: Feature) throws {
+        guard
+            let title = feature.attributes["name"] as? String,
+            let address = feature.attributes["address"] as? String,
+            let imageUrlString = feature.attributes["image_url"] as? String
+        else {
+            throw Error.parsingFeatureFailed
+        }
+
         self.title = title
         self.address = address
-        self.imageUrl = imageUrl
+        self.imageUrl = imageUrlString
     }
 }
