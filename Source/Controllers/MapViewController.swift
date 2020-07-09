@@ -81,6 +81,8 @@ class MapViewController: UIViewController {
         self.mapView.setCenter(feature.coordinate, zoomLevel: Defaults.viewInfoZoomLevel, animated: true)
 
         self.showBuidingInfo(buildingInfo)
+
+        self.addAnnotation(at: feature.coordinate)
     }
 
     private func showBuidingInfo(_ info: BuildingInfo) {
@@ -89,20 +91,20 @@ class MapViewController: UIViewController {
         _ = buildingInfoVC.view
 
         buildingInfoVC.setupWith(buildingInfo: info)
+        buildingInfoVC.popupDelegate = self
 
         self.present(buildingInfoVC, animated: true, completion: nil)
+    }
+
+    private func addAnnotation(at coordinates: CLLocationCoordinate2D) {
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = coordinates
+
+        self.mapView.addAnnotation(annotation)
     }
 }
 
 extension MapViewController: MGLMapViewDelegate {
-    func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
-        self.mapView.removeAnnotation(annotation)
-    }
-
-    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return true
-    }
-
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: "buildings", ofType: "geojson")!)
         let source = MGLShapeSource(identifier: "buildings", url: url)
@@ -120,7 +122,20 @@ extension MapViewController: MGLMapViewDelegate {
         let format = "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'exponential', 1.75, %@)"
         layer.circleRadius = NSExpression(format: format, zoomStops)
 
-        style.addLayer(layer)
+        if let annotationsLayer = mapView.style?.layer(withIdentifier: "com.mapbox.annotations.points") {
+            style.insertLayer(layer, below: annotationsLayer)
+        }
+        else {
+            style.addLayer(layer)
+        }
+    }
+}
+
+extension MapViewController: BottomPopupDelegate {
+    func bottomPopupWillDismiss() {
+        if let annotations = self.mapView.annotations {
+            self.mapView.removeAnnotations(annotations)
+        }
     }
 }
 
