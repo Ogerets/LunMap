@@ -37,16 +37,13 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MapViewControllerProtocol {
     func getBuildingFeatures(in rect: CGRect) -> [Feature] {
-        let mglFeatures = self.mapView.visibleFeatures(in: rect, styleLayerIdentifiers: [StyleLayerId.buildings.rawValue])
-
-        return mglFeatures.map { Feature(coordinates: $0.coordinate, attributes: $0.attributes) }
+        self.mapView
+            .visibleFeatures(in: rect, styleLayerIdentifiers: [StyleLayerId.buildings.rawValue])
+            .map { Feature(coordinates: $0.coordinate, attributes: $0.attributes) }
     }
 
     func showBuildingInfo(_ info: BuildingInfo) {
-        let buildingInfoView = UIStoryboard(name: "BuildingInfo", bundle: Bundle.main)
-        let buildingInfoVC = buildingInfoView.instantiateInitialViewController()! as! BuildingInfoViewController
-        _ = buildingInfoVC.view
-
+        let buildingInfoVC = self.initViewController(storyboard: .BuildingInfo) as! BuildingInfoViewController
         buildingInfoVC.setupWith(buildingInfo: info)
         buildingInfoVC.popupDelegate = self
 
