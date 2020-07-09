@@ -101,7 +101,8 @@ extension MapViewController: MGLMapViewDelegate {
 }
 
 extension MapViewController: BottomPopupDelegate {
-    func bottomPopupWillDismiss() {
+    // TODO: Add to Presenter ?
+    func bottomPopupDidDismiss() {
         if let annotations = self.mapView.annotations {
             self.mapView.removeAnnotations(annotations)
         }

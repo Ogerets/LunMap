@@ -22,12 +22,13 @@ class BuildingInfoViewController: BottomPopupViewController {
             self.addressLabel.text = buildingInfo.address
         }
 
-        let url = URL(string: buildingInfo.imageUrl)
-
         // FIXME
-        let data = try! Data(contentsOf: url!)
-
-        self.imageView.image = UIImage(data: data)
+        if
+            let url = URL(string: buildingInfo.imageUrl),
+            let data = try? Data(contentsOf: url)
+        {
+            self.imageView.image = UIImage(data: data)
+        }
     }
 
     override var popupHeight: CGFloat { return CGFloat(300) }
