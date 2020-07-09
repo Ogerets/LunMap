@@ -17,7 +17,7 @@ $ brew install carthage
 To link frameworks to app, run the following command:
 
 ```bash
-$ carthage update
+$ carthage bootstrap
 ```
 
 ### Third-party
