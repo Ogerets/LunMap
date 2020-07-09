@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Describes available style layers
 enum StyleLayerId: String {
     case buildings
 }

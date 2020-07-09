@@ -23,6 +23,7 @@ class BuildingInfoViewController: BottomPopupViewController {
     override var popupHeight: CGFloat { return CGFloat(320) }
 }
 
+// MARK: - Presenter Protocol Conformance
 extension BuildingInfoViewController: BuildingInfoControllerProtocol {
     func setTitle(text: String) {
         self.titleLabel.text = text

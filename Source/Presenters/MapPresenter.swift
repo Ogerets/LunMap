@@ -26,7 +26,7 @@ class MapPresenter {
 
     func mapTapped(at point: CGPoint) {
         do {
-            // TODO: adjust according to zoom level
+            // FUTURE: adjust according to zoom level
             let searchEdge: CGFloat = 10.0
 
             let searchRect = CGRect(x: point.x - searchEdge / 2,
@@ -38,7 +38,7 @@ class MapPresenter {
                 return
             }
 
-            // TODO: Pick the nearest one
+            // FUTURE: Pick the closest to tap
             guard let feature = features.first else {
                 return
             }

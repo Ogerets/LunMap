@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Contains parameters for setting up start properties of map
 class MapViewParams {
     var city: City = Defaults.city
     var startZoomLevel: Double = Defaults.startZoomLevel

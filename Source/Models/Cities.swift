@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 
+/// Describes available cities with default coordiinates
 enum City {
     case Kyiv
 

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Represents information about the building
 class BuildingInfo {
     let title: String
     let address: String

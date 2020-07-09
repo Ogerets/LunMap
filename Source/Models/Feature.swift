@@ -8,6 +8,7 @@
 
 import CoreLocation
 
+/// Represents any feature on map
 class Feature {
     let coordinates: CLLocationCoordinate2D
     let attributes: [String: Any]

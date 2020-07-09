@@ -35,6 +35,7 @@ class MapViewController: UIViewController {
     }
 }
 
+// MARK: - Presenter Protocol Conformance
 extension MapViewController: MapViewControllerProtocol {
     func getBuildingFeatures(in rect: CGRect) -> [Feature] {
         self.mapView
@@ -71,8 +72,10 @@ extension MapViewController: MapViewControllerProtocol {
     }
 }
 
+// MARK: - Mapbox Delegate
 extension MapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+        // FUTURE: can be loaded from mapbox server as tileset
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: "buildings", ofType: "geojson")!)
         let source = MGLShapeSource(identifier: "buildings", url: url)
         style.addSource(source)
@@ -99,6 +102,7 @@ extension MapViewController: MGLMapViewDelegate {
     }
 }
 
+// MARK: - Bottom Popup Delegate
 extension MapViewController: BottomPopupDelegate {
     func bottomPopupDidDismiss() {
         self.presenter.buildingInfoViewDidDismiss()
