@@ -20,6 +20,7 @@ class BuildingInfoViewController: BottomPopupViewController {
         self.presenter.updateData()
     }
 
+    // FUTURE: Should probably depend on screen size
     override var popupHeight: CGFloat { return CGFloat(320) }
 }
 
