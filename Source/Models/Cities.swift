@@ -11,11 +11,11 @@ import CoreLocation
 
 /// Describes available cities with default coordiinates
 enum City {
-    case Kyiv
+    case kyiv
 
     func coordinates() -> CLLocationCoordinate2D {
         switch self {
-        case .Kyiv:
+        case .kyiv:
             return CLLocationCoordinate2D(latitude: 50.45466, longitude: 30.5238)
         }
     }

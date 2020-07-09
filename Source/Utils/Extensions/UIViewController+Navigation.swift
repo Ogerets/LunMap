@@ -10,10 +10,10 @@ import UIKit
 
 extension UIViewController {
     enum StoryboardName: String {
-        case Map
-        case BuildingInfo
+        case map = "Map"
+        case buildingInfo = "BuildingInfo"
     }
-    
+
     func initViewController(storyboard: StoryboardName) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboard.rawValue, bundle: Bundle.main)
         let vc = storyboard.instantiateInitialViewController()!

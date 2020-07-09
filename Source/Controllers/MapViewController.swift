@@ -44,7 +44,7 @@ extension MapViewController: MapViewControllerProtocol {
     }
 
     func showBuildingInfo(_ info: BuildingInfo) {
-        let buildingInfoVC = self.initViewController(storyboard: .BuildingInfo) as! BuildingInfoViewController
+        let buildingInfoVC = self.initViewController(storyboard: .buildingInfo) as! BuildingInfoViewController
         let presenter = BuildingInfoPresenter(controller: buildingInfoVC, buildingInfo: info)
         buildingInfoVC.set(presenter: presenter)
         buildingInfoVC.popupDelegate = self
@@ -55,7 +55,8 @@ extension MapViewController: MapViewControllerProtocol {
     func setCamera(to coordinate: CLLocationCoordinate2D) {
         let camera = MGLMapCamera(lookingAtCenter: coordinate, altitude: 4500, pitch: 0, heading: 0)
 
-        self.mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: .easeInEaseOut))
+        let animationFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        self.mapView.setCamera(camera, withDuration: 1, animationTimingFunction: animationFunction)
     }
 
     func addAnnotation(at coordinates: CLLocationCoordinate2D) {
@@ -108,4 +109,3 @@ extension MapViewController: BottomPopupDelegate {
         self.presenter.buildingInfoViewDidDismiss()
     }
 }
-

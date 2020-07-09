@@ -10,15 +10,15 @@ import UIKit
 
 final class BottomPopupPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     private unowned var attributesOwner: BottomPresentableViewController
-    
+
     init(attributesOwner: BottomPresentableViewController) {
         self.attributesOwner = attributesOwner
     }
-    
+
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return attributesOwner.popupPresentDuration
     }
-    
+
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let toVC = transitionContext.viewController(forKey: .to)!
         transitionContext.containerView.addSubview(toVC.view)

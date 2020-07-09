@@ -38,7 +38,7 @@ class BuildingInfoPresenter {
     }
 
     private func startDownloadImage(from url: URL) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 Log.error(error, message: "Downloading image failed")
             }
@@ -54,4 +54,3 @@ class BuildingInfoPresenter {
         }.resume()
     }
 }
-

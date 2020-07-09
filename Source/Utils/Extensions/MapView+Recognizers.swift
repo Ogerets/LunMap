@@ -19,4 +19,3 @@ extension MGLMapView {
         self.addGestureRecognizer(newRecognizer)
     }
 }
-
