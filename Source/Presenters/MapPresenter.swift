@@ -11,12 +11,10 @@ import CoreLocation
 
 protocol MapViewControllerProtocol: class {
     func getBuildingFeatures(in rect: CGRect) -> [Feature]
-
     func showBuildingInfo(_ info: BuildingInfo)
-
     func setCamera(to coordinate: CLLocationCoordinate2D)
-
     func addAnnotation(at coorditate: CLLocationCoordinate2D)
+    func removeAnnotations()
 }
 
 class MapPresenter {
@@ -54,5 +52,9 @@ class MapPresenter {
         catch {
             Log.error(error, message: "Failed map tap")
         }
+    }
+
+    func buildingInfoViewDidDismiss() {
+        self.controller?.removeAnnotations()
     }
 }

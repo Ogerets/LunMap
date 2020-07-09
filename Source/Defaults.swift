@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 enum Defaults {
-    static var city: Cities = .Kyiv
+    static var city: City = .Kyiv
     static var startZoomLevel: Double = 9.0
     static var viewInfoZoomLevel: Double = 14.0
     static var maxZoomLevel: Double = 15.4

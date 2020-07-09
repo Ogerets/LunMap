@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-enum Cities {
+enum City {
     case Kyiv
 
     func coordinates() -> CLLocationCoordinate2D {
