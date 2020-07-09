@@ -51,7 +51,9 @@ extension MapViewController: MapViewControllerProtocol {
     }
 
     func setCamera(to coordinate: CLLocationCoordinate2D) {
-        self.mapView.setCenter(coordinate, zoomLevel: Defaults.viewInfoZoomLevel, animated: true)
+        let camera = MGLMapCamera(lookingAtCenter: coordinate, altitude: 4500, pitch: 0, heading: 0)
+
+        self.mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: .easeInEaseOut))
     }
 
     func addAnnotation(at coordinates: CLLocationCoordinate2D) {
