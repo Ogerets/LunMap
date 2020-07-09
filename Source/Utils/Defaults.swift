@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 enum Defaults {
     static var city: City = .kyiv

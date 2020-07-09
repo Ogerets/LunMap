@@ -6,7 +6,6 @@
 //  Copyright © 2020 Yevhen Pyvovarov. All rights reserved.
 //
 
-import UIKit
 import Mapbox
 
 class MapViewController: UIViewController {

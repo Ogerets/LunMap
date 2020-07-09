@@ -6,7 +6,6 @@
 //  Copyright © 2020 Yevhen Pyvovarov. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
 /// Describes available cities with default coordiinates
