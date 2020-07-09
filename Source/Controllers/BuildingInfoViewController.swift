@@ -13,33 +13,30 @@ class BuildingInfoViewController: BottomPopupViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
 
-    public func setupWith(buildingInfo: BuildingInfo) {
-        if !buildingInfo.title.isEmpty {
-            self.titleLabel.text = buildingInfo.title
-        }
+    private var presenter: BuildingInfoPresenter!
 
-        if !buildingInfo.address.isEmpty {
-            self.addressLabel.text = buildingInfo.address
-        }
-
-        // FIXME
-        if
-            let url = URL(string: buildingInfo.imageUrl),
-            let data = try? Data(contentsOf: url)
-        {
-            self.imageView.image = UIImage(data: data)
-        }
+    func set(presenter: BuildingInfoPresenter) {
+        self.presenter = presenter
+        self.presenter.updateData()
     }
 
     override var popupHeight: CGFloat { return CGFloat(300) }
+}
 
-    override var popupTopCornerRadius: CGFloat { return CGFloat(10) }
+extension BuildingInfoViewController: BuildingInfoControllerProtocol {
+    func setTitle(text: String) {
+        self.titleLabel.text = text
+    }
 
-    override var popupPresentDuration: Double { return 0.2 }
+    func setAddress(text: String) {
+        self.addressLabel.text = text
+    }
 
-    override var popupDismissDuration: Double { return 0.2 }
+    func setImage(data: Data) {
+        guard let image = UIImage(data: data) else {
+            return
+        }
 
-    override var popupShouldDismissInteractivelty: Bool { return true }
-
-    override var popupDimmingViewAlpha: CGFloat { return 0 }
+        self.imageView.image = image
+    }
 }

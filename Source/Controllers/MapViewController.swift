@@ -44,7 +44,8 @@ extension MapViewController: MapViewControllerProtocol {
 
     func showBuildingInfo(_ info: BuildingInfo) {
         let buildingInfoVC = self.initViewController(storyboard: .BuildingInfo) as! BuildingInfoViewController
-        buildingInfoVC.setupWith(buildingInfo: info)
+        let presenter = BuildingInfoPresenter(controller: buildingInfoVC, buildingInfo: info)
+        buildingInfoVC.set(presenter: presenter)
         buildingInfoVC.popupDelegate = self
 
         self.present(buildingInfoVC, animated: true, completion: nil)
