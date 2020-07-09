@@ -19,3 +19,7 @@ To link frameworks to app, run the following command:
 ```bash
 $ carthage update
 ```
+
+### Third-party
+* [MapBox SDK](https://www.mapbox.com) - for map presentation
+* [BottomPopup sources](https://github.com/ergunemr/BottomPopup) - for Bottom Popup Controller
