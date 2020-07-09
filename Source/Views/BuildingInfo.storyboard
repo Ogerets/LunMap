@@ -24,14 +24,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80P-pj-hXf">
-                                <rect key="frame" x="10" y="210" width="394" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <rect key="frame" x="10" y="210" width="394" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI3-dL-OS8">
-                                <rect key="frame" x="10" y="251.5" width="414" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing Address" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI3-dL-OS8">
+                                <rect key="frame" x="10" y="244.5" width="394" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,8 +45,8 @@
                             <constraint firstItem="ICR-FE-Scm" firstAttribute="trailing" secondItem="80P-pj-hXf" secondAttribute="trailing" constant="10" id="N2U-fd-Dlg"/>
                             <constraint firstItem="ybe-3m-Vlm" firstAttribute="top" secondItem="NeX-vg-BJV" secondAttribute="top" id="Rik-Ti-LJR"/>
                             <constraint firstItem="ybe-3m-Vlm" firstAttribute="leading" secondItem="ICR-FE-Scm" secondAttribute="leading" id="Y37-9i-oTx"/>
-                            <constraint firstItem="EI3-dL-OS8" firstAttribute="top" secondItem="80P-pj-hXf" secondAttribute="bottom" constant="10" id="dbQ-fJ-zsL"/>
-                            <constraint firstItem="EI3-dL-OS8" firstAttribute="trailing" secondItem="ICR-FE-Scm" secondAttribute="trailing" constant="10" id="liH-Jp-6LJ"/>
+                            <constraint firstItem="EI3-dL-OS8" firstAttribute="top" secondItem="80P-pj-hXf" secondAttribute="bottom" constant="7" id="dbQ-fJ-zsL"/>
+                            <constraint firstItem="EI3-dL-OS8" firstAttribute="trailing" secondItem="ICR-FE-Scm" secondAttribute="trailing" constant="-10" id="liH-Jp-6LJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ICR-FE-Scm"/>
                     </view>

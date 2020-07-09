@@ -20,7 +20,7 @@ class BuildingInfoViewController: BottomPopupViewController {
         self.presenter.updateData()
     }
 
-    override var popupHeight: CGFloat { return CGFloat(300) }
+    override var popupHeight: CGFloat { return CGFloat(320) }
 }
 
 extension BuildingInfoViewController: BuildingInfoControllerProtocol {
